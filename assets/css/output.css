@@ -749,6 +749,9 @@
   .bg-\[url\(\'\/rickyjuliansyah\.github\.io\/portfolio\/assets\/images\/profile\.jpg\'\)\] {
     background-image: url('/rickyjuliansyah.github.io/portfolio/assets/images/profile.jpg');
   }
+  .bg-\[url\(\'https\:\/\/rickyjuliansyah\.github\.io\/portfolio\/assets\/images\/profile\.jpg\'\)\] {
+    background-image: url('https://rickyjuliansyah.github.io/portfolio/assets/images/profile.jpg');
+  }
   .bg-\[url\(\'rickyjuliansyah\.github\.io\/portfolio\/\/assets\/images\/profile\.jpg\'\)\] {
     background-image: url('rickyjuliansyah.github.io/portfolio//assets/images/profile.jpg');
   }
