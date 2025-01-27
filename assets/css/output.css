@@ -658,6 +658,9 @@
   .h-full {
     height: 100%;
   }
+  .h-screen {
+    height: 100vh;
+  }
   .w-0 {
     width: calc(var(--spacing) * 0);
   }
@@ -681,6 +684,12 @@
   }
   .resize {
     resize: both;
+  }
+  .grid-cols-subgrid {
+    grid-template-columns: subgrid;
+  }
+  .place-items-center {
+    place-items: center;
   }
   .content-center {
     align-content: center;
@@ -974,6 +983,26 @@
       z-index: 10;
     }
   }
+  .xs\:col-start-1 {
+    @media (width >= 20rem) {
+      grid-column-start: 1;
+    }
+  }
+  .xs\:col-start-2 {
+    @media (width >= 20rem) {
+      grid-column-start: 2;
+    }
+  }
+  .xs\:col-start-8 {
+    @media (width >= 20rem) {
+      grid-column-start: 8;
+    }
+  }
+  .xs\:col-start-12 {
+    @media (width >= 20rem) {
+      grid-column-start: 12;
+    }
+  }
   .xs\:mt-4 {
     @media (width >= 20rem) {
       margin-top: calc(var(--spacing) * 4);
@@ -982,6 +1011,11 @@
   .xs\:hidden {
     @media (width >= 20rem) {
       display: none;
+    }
+  }
+  .xs\:h-100 {
+    @media (width >= 20rem) {
+      height: calc(var(--spacing) * 100);
     }
   }
   .xs\:h-140 {
@@ -997,6 +1031,11 @@
   .xs\:grid-cols-3 {
     @media (width >= 20rem) {
       grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+  .xs\:grid-cols-subgrid {
+    @media (width >= 20rem) {
+      grid-template-columns: subgrid;
     }
   }
   .xs\:gap-2 {
@@ -1031,9 +1070,29 @@
       line-height: var(--tw-leading, var(--text-4xl--line-height));
     }
   }
+  .sm\:col-auto {
+    @media (width >= 40rem) {
+      grid-column: auto;
+    }
+  }
+  .sm\:col-span-2 {
+    @media (width >= 40rem) {
+      grid-column: span 2 / span 2;
+    }
+  }
   .sm\:col-span-12 {
     @media (width >= 40rem) {
       grid-column: span 12 / span 12;
+    }
+  }
+  .sm\:col-start-1 {
+    @media (width >= 40rem) {
+      grid-column-start: 1;
+    }
+  }
+  .sm\:col-start-2 {
+    @media (width >= 40rem) {
+      grid-column-start: 2;
     }
   }
   .sm\:block {
@@ -1041,9 +1100,24 @@
       display: block;
     }
   }
+  .sm\:h-72 {
+    @media (width >= 40rem) {
+      height: calc(var(--spacing) * 72);
+    }
+  }
   .sm\:h-80 {
     @media (width >= 40rem) {
       height: calc(var(--spacing) * 80);
+    }
+  }
+  .sm\:h-100 {
+    @media (width >= 40rem) {
+      height: calc(var(--spacing) * 100);
+    }
+  }
+  .sm\:h-110 {
+    @media (width >= 40rem) {
+      height: calc(var(--spacing) * 110);
     }
   }
   .sm\:grid-cols-8 {
@@ -1071,14 +1145,29 @@
       position: static;
     }
   }
+  .md\:col-auto {
+    @media (width >= 48rem) {
+      grid-column: auto;
+    }
+  }
   .md\:col-span-4 {
     @media (width >= 48rem) {
       grid-column: span 4 / span 4;
     }
   }
+  .md\:col-span-6 {
+    @media (width >= 48rem) {
+      grid-column: span 6 / span 6;
+    }
+  }
   .md\:col-span-7 {
     @media (width >= 48rem) {
       grid-column: span 7 / span 7;
+    }
+  }
+  .md\:col-span-8 {
+    @media (width >= 48rem) {
+      grid-column: span 8 / span 8;
     }
   }
   .md\:hidden {
@@ -1096,6 +1185,11 @@
       height: 100%;
     }
   }
+  .md\:grid-cols-1 {
+    @media (width >= 48rem) {
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+  }
   .md\:grid-cols-7 {
     @media (width >= 48rem) {
       grid-template-columns: repeat(7, minmax(0, 1fr));
@@ -1109,6 +1203,11 @@
   .md\:grid-cols-12 {
     @media (width >= 48rem) {
       grid-template-columns: repeat(12, minmax(0, 1fr));
+    }
+  }
+  .md\:grid-cols-subgrid {
+    @media (width >= 48rem) {
+      grid-template-columns: subgrid;
     }
   }
   .md\:justify-end {
@@ -1159,6 +1258,11 @@
       position: static;
     }
   }
+  .xl\:col-auto {
+    @media (width >= 80rem) {
+      grid-column: auto;
+    }
+  }
   .xl\:col-span-4 {
     @media (width >= 80rem) {
       grid-column: span 4 / span 4;
@@ -1167,6 +1271,21 @@
   .xl\:col-span-7 {
     @media (width >= 80rem) {
       grid-column: span 7 / span 7;
+    }
+  }
+  .xl\:col-span-8 {
+    @media (width >= 80rem) {
+      grid-column: span 8 / span 8;
+    }
+  }
+  .xl\:col-start-0 {
+    @media (width >= 80rem) {
+      grid-column-start: 0;
+    }
+  }
+  .xl\:col-start-1 {
+    @media (width >= 80rem) {
+      grid-column-start: 1;
     }
   }
   .xl\:row-span-12 {
@@ -1187,6 +1306,11 @@
   .xl\:inline-block {
     @media (width >= 80rem) {
       display: inline-block;
+    }
+  }
+  .xl\:h-screen {
+    @media (width >= 80rem) {
+      height: 100vh;
     }
   }
   .xl\:grid-cols-8 {
