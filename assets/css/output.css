@@ -746,6 +746,12 @@
   .bg-\[url\(\'\/assets\/images\/profile\.jpg\'\)\] {
     background-image: url('/assets/images/profile.jpg');
   }
+  .bg-\[url\(\'rickyjuliansyah\.github\.io\/portfolio\/\/assets\/images\/profile\.jpg\'\)\] {
+    background-image: url('rickyjuliansyah.github.io/portfolio//assets/images/profile.jpg');
+  }
+  .bg-\[url\(\'rickyjuliansyah\.github\.io\/portfolio\/assets\/images\/profile\.jpg\'\)\] {
+    background-image: url('rickyjuliansyah.github.io/portfolio/assets/images/profile.jpg');
+  }
   .from-blue-500 {
     --tw-gradient-from: var(--color-blue-500);
     --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position,) var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
