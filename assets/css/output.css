@@ -737,6 +737,9 @@
     --tw-gradient-position: to top in oklab,;
     background-image: linear-gradient(var(--tw-gradient-stops));
   }
+  .bg-\[url\(\'\/\.\/assets\/images\/profile\.jpg\'\)\] {
+    background-image: url('/./assets/images/profile.jpg');
+  }
   .bg-\[url\(\'\/assets\/images\/profile\.jpg\'\)\] {
     background-image: url('/assets/images/profile.jpg');
   }
