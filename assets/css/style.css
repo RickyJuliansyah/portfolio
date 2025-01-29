@@ -21,3 +21,8 @@ body {
 a {
     transition: background-color 0.3s ease;
 }
+
+#about,
+#work {
+    transition: opacity 1s ease, transform 1s ease;
+}

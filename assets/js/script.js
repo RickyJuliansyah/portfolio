@@ -14,6 +14,27 @@ document.querySelectorAll("#link a").forEach(function (element) {
         if (line) {
             line.classList.add("w-full");
         }
+
+        if (this.innerText) {
+            let about = document.getElementById('about');
+            let work = document.getElementById('work');
+
+            // Pertama, hide about dengan transisi
+            about.style.opacity = "0";
+            setTimeout(() => {
+                about.classList.add("hidden");
+
+                // Pas about udah hidden, kita prepare work dulu
+                work.classList.remove("hidden");
+                work.classList.add("grid");
+
+                // Kasih delay dikit biar ada jeda smooth
+                setTimeout(() => {
+                    work.style.opacity = "1";
+                }, 1500);
+
+            }, 500);
+        }
     });
 });
 

@@ -2,8 +2,10 @@
 
 @theme {
     --color-primary: #1798E2;
-    --color-secondary: #107f9e;
+    --color-secondary: #CBECFF;
     --color-neutral: #E9E9E9;
     --font-extra-bold: 'Poppins-ExtraBold';
+    --font-semi-bold: 'Poppins-SemiBold';
     --breakpoint-xs: 20rem;
+    --text-tiny: 0.625rem
 }
