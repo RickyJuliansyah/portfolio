@@ -73,7 +73,7 @@ const route = useRoute();
 
   <div v-else class="w-full">
     <nav
-      class="absolute inset-x-0 bottom-0 xs:hidden xl:inline-block md:inline-block"
+      class="absolute inset-x-0 bottom-0 xs:hidden xl:inline-block md:hidden"
     >
       <div class="space-x-6 text-center" id="link">
         <RouterLink

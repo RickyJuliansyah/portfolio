@@ -97,9 +97,7 @@
   </h1>
 
   <div class="grid xl:grid-cols-8 md:grid-cols-8 xs:grid-cols-1 xl:my-10">
-    <p
-      class="xl:col-span-7 md:col-span-8 xs:grid-cols-1 text-justify xl:text-3xl"
-    >
+    <p class="xl:col-span-7 md:col-span-8 xs:grid-cols-1 text-justify">
       Hello !!, I'm Ricky Juliansyah, a Full Stack Web Developer with over 3
       years of experience. I'm skilled in developing website-based applications
       using Vue JS as the frontend and CodeIgniter as the Backend to meet
@@ -147,13 +145,18 @@ export default {
   data() {
     return {
       skills: [
-        { id: 1, nameSkills: "PHP", pathImage:"php", duration: "3" },
-        { id: 2, nameSkills: "JAVASCRIPT",pathImage:"js", duration: "2" },
-        { id: 3, nameSkills: "MySQL",pathImage:"mysql", duration: "3" },
-        { id: 4, nameSkills: "Codeigniter",pathImage:"ci", duration: "3" },
-        { id: 5, nameSkills: "Vue JS",pathImage:"vuejs", duration: "2" },
-        { id: 6, nameSkills: "Bootstrap",pathImage:"bootstrap", duration: "3" },
-        { id: 7, nameSkills: "Vuetify",pathImage:"vuetify", duration: "2" },
+        { id: 1, nameSkills: "PHP", pathImage: "php", duration: "3" },
+        { id: 2, nameSkills: "JAVASCRIPT", pathImage: "js", duration: "2" },
+        { id: 3, nameSkills: "MySQL", pathImage: "mysql", duration: "3" },
+        { id: 4, nameSkills: "Codeigniter", pathImage: "ci", duration: "3" },
+        { id: 5, nameSkills: "Vue JS", pathImage: "vuejs", duration: "2" },
+        {
+          id: 6,
+          nameSkills: "Bootstrap",
+          pathImage: "bootstrap",
+          duration: "3",
+        },
+        { id: 7, nameSkills: "Vuetify", pathImage: "vuetify", duration: "2" },
       ],
     };
   },
