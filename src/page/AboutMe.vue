@@ -96,8 +96,10 @@
     ABOUT ME
   </h1>
 
-  <div class="grid xl:grid-cols-8 md:grid-cols-8 xs:grid-cols-1">
-    <p class="xl:col-span-7 md:col-span-8 xs:grid-cols-1 text-justify">
+  <div class="grid xl:grid-cols-8 md:grid-cols-8 xs:grid-cols-1 xl:my-10">
+    <p
+      class="xl:col-span-7 md:col-span-8 xs:grid-cols-1 text-justify xl:text-3xl"
+    >
       Hello !!, I'm Ricky Juliansyah, a Full Stack Web Developer with over 3
       years of experience. I'm skilled in developing website-based applications
       using Vue JS as the frontend and CodeIgniter as the Backend to meet
@@ -124,98 +126,36 @@
   <div
     class="grid xl:grid-cols-8 md:grid-cols-7 xs:grid-cols-3 xl:gap-4 md:gap-2 xs:gap-2 xs:mb-4"
   >
-    <div class="text-center">
+    <div class="text-center" v-for="data in skills" :key="data.id">
       <div
         class="bg-neutral rounded-md h-24 flex items-center justify-center ease-in-out hover:-translate-y-1 hover:scale-110 transition"
       >
         <img
-          src="../assets/images/php-logo.png"
+          :src="`/src/assets/images/${data.pathImage}-logo.png`"
           alt="php logo"
           class="p-2 h-full w-auto object-contain"
         />
       </div>
-      <h3 class="xl:text-lg md:text-sm">PHP</h3>
-      <h5 class="text-neutral-500 text-xs">3 Years</h5>
-    </div>
-    <div class="text-center">
-      <div
-        class="bg-neutral rounded-md h-24 flex items-center justify-center ease-in-out hover:-translate-y-1 hover:scale-110 transition overflow-hidden"
-      >
-        <img
-          src="../assets/images/js-logo.png"
-          alt="js logo"
-          class="h-22 w-22 object-cover"
-        />
-      </div>
-      <h3 class="xl:text-lg md:text-sm">JAVASCRIPT</h3>
-      <h5 class="text-neutral-500 text-xs">2 Years</h5>
-    </div>
-    <div class="text-center">
-      <div
-        class="bg-neutral rounded-md h-24 flex items-center justify-center ease-in-out hover:-translate-y-1 hover:scale-110 transition"
-      >
-        <img
-          src="../assets/images/mysql-logo.png"
-          alt="php logo"
-          class="h-full w-auto object-contain"
-        />
-      </div>
-      <h3 class="xl:text-lg md:text-sm">MySql</h3>
-      <h5 class="text-neutral-500 text-xs">3 Years</h5>
-    </div>
-    <div class="text-center">
-      <div
-        class="bg-neutral rounded-md h-24 flex items-center justify-center ease-in-out hover:-translate-y-1 hover:scale-110 transition"
-      >
-        <img
-          src="../assets/images/ci-logo.png"
-          alt="php logo"
-          class="p-2 h-full w-auto object-contain"
-        />
-      </div>
-      <h3 class="xl:text-lg md:text-sm">CodeIgniter</h3>
-      <h5 class="text-neutral-500 text-xs">3 Years</h5>
-    </div>
-    <div class="text-center">
-      <div
-        class="bg-neutral rounded-md h-24 flex items-center justify-center ease-in-out hover:-translate-y-1 hover:scale-110 transition"
-      >
-        <img
-          src="../assets/images/vuejs-logo.png"
-          alt="php logo"
-          class="p-2 h-full w-auto object-contain"
-        />
-      </div>
-      <h3 class="xl:text-lg md:text-sm">Vue JS</h3>
-      <h5 class="text-neutral-500 text-xs">2 Years</h5>
-    </div>
-    <div class="text-center">
-      <div
-        class="bg-neutral rounded-md h-24 flex items-center justify-center ease-in-out hover:-translate-y-1 hover:scale-110 transition"
-      >
-        <img
-          src="../assets/images/bootstrap-logo.png"
-          alt="php logo"
-          class="p-2 h-full w-auto object-contain"
-        />
-      </div>
-      <h3 class="xl:text-lg md:text-sm">Bootstrap</h3>
-      <h5 class="text-neutral-500 text-xs">3 Years</h5>
-    </div>
-    <div
-      class="text-center xs:col-start-2 sm:col-start-2 md:col-auto xl:col-auto"
-    >
-      <div
-        class="bg-neutral rounded-md flex items-center justify-center ease-in-out hover:-translate-y-1 hover:scale-110 transition h-24"
-      >
-        <img
-          src="../assets/images/vuetify-logo.png"
-          alt="php logo"
-          class="p-2 h-full w-auto"
-        />
-      </div>
-      <h3 class="xl:text-lg md:text-sm">Vuetify</h3>
-      <h5 class="text-neutral-500 text-xs">2 Years</h5>
+      <h3 class="xl:text-lg md:text-sm">{{ data.nameSkills }}</h3>
+      <h5 class="text-neutral-500 text-xs">{{ data.duration }} Years</h5>
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      skills: [
+        { id: 1, nameSkills: "PHP", pathImage:"php", duration: "3" },
+        { id: 2, nameSkills: "JAVASCRIPT",pathImage:"js", duration: "2" },
+        { id: 3, nameSkills: "MySQL",pathImage:"mysql", duration: "3" },
+        { id: 4, nameSkills: "Codeigniter",pathImage:"ci", duration: "3" },
+        { id: 5, nameSkills: "Vue JS",pathImage:"vuejs", duration: "2" },
+        { id: 6, nameSkills: "Bootstrap",pathImage:"bootstrap", duration: "3" },
+        { id: 7, nameSkills: "Vuetify",pathImage:"vuetify", duration: "2" },
+      ],
+    };
+  },
+};
+</script>
