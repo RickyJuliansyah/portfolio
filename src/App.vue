@@ -4,7 +4,7 @@ const route = useRoute();
 </script>
 
 <template>
-  <template v-if="route.path === '/'">
+  <template v-if="route.path === '/' || route.path === '/contact'">
     <div
       id="about"
       class="grid xl:grid-cols-12 md:grid-cols-12 sm:grid-cols-12 w-full h-screen"
@@ -12,7 +12,12 @@ const route = useRoute();
       <!-- Left Side -->
       <div class="xl:col-span-4 md:col-span-4 sm:col-span-12 relative">
         <div
-          class="bg-[url('https://rickyjuliansyah.github.io/portfolio/src/assets//images/profile.jpg')] bg-cover bg-center xs:bg-top w-full h-full absolute"
+          :class="
+            route.path === '/'
+              ? `bg-[url('https://rickyjuliansyah.github.io/portfolio/src/assets/images/profile.jpg')]`
+              : `bg-[url('https://rickyjuliansyah.github.io/portfolio/src/assets/images/contact.png')] bg-top`
+          "
+          class="bg-cover bg-center xs:bg-top w-full h-full absolute"
         >
           <div
             class="xl:hidden absolute inset-0 bg-gradient-to-t from-blue-500 to-transparent opacity-80"
@@ -51,14 +56,14 @@ const route = useRoute();
               ></span
             ></RouterLink>
             <RouterLink
-              to="/"
+              to="/portfolio"
               class="px-3 py-2 text-md text-neutral-800 relative inline-block group hover:font-extra-bold"
               >PORTFOLIO<span
                 class="absolute bottom-0 left-0 w-0 h-1 bg-[#1798E2] transition-all group-hover:w-full"
               ></span
             ></RouterLink>
             <RouterLink
-              to="/"
+              to="/contact"
               class="px-3 py-2 text-md text-neutral-800 relative inline-block group hover:font-extra-bold"
               >CONTACT<span
                 class="absolute bottom-0 left-0 w-0 h-1 bg-[#1798E2] transition-all group-hover:w-full"
@@ -93,14 +98,14 @@ const route = useRoute();
           ></span
         ></RouterLink>
         <RouterLink
-          to="/"
+          to="/portfolio"
           class="px-3 py-2 text-md text-neutral-800 relative inline-block group hover:font-extra-bold"
           >PORTFOLIO<span
             class="absolute bottom-0 left-0 w-0 h-1 bg-[#1798E2] transition-all group-hover:w-full"
           ></span
         ></RouterLink>
         <RouterLink
-          to="/"
+          to="/contact"
           class="px-3 py-2 text-md text-neutral-800 relative inline-block group hover:font-extra-bold"
           >CONTACT<span
             class="absolute bottom-0 left-0 w-0 h-1 bg-[#1798E2] transition-all group-hover:w-full"

@@ -12,6 +12,16 @@ const router = createRouter({
             path: '/work-experience',
             name: 'work-experience',
             component: () => import('../page/WorkExperience.vue')
+        },
+        {
+            path: '/portfolio',
+            name: 'portfolio',
+            component: () => import('../page/Portfolio.vue')
+        },
+        {
+            path: '/contact',
+            name: 'contact',
+            component: () => import('../page/Contact.vue')
         }
     ]
 })
