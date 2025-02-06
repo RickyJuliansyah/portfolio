@@ -98,31 +98,34 @@
 
   <!-- List Contact -->
   <div class="grid grid-cols-12 gap-2 xs:mb-4">
-    <div class="text-center col-span-12" v-for="data in contact" :key="data.id">
-      <button
-        type="button"
-        class="bg-neutral w-full hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center relative"
+    <div class="text-center xl:col-span-11 xs:col-span-12" v-for="data in contact" :key="data.id">
+      <a
+        :href="data.link"
+        class="button my-4 bg-neutral w-full hover:bg-blue-800 hover:text-neutral focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center relative"
+        target="_blank"
       >
-        <div class="bg-neutral rounded-md h-22">
-          <div v-html="data.icon" class="h-full"></div>
-        </div>
-        {{ data.name }}
-        <svg
-          class="rtl:rotate-180 w-3.5 h-3.5 ms-2 right-0"
-          aria-hidden="true"
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 14 10"
-        >
-          <path
-            stroke="currentColor"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M1 5h12m0 0L9 1m4 4L9 9"
-          />
-        </svg>
-      </button>
+          <div
+            class="rounded-md md:w-22 md:h-22 xs:w-12 flex justify-center items-center"
+          >
+            <div v-html="data.icon" class="w-16 h-16 object-contain"></div>
+          </div>
+          <h2 class="lg:text-3xl xs:text-xs text-left pl-4 font-semi-bold">{{ data.name }}</h2>
+          <svg
+            class="rtl:rotate-180 md:w-9 md:h-9 ms-2 xs:w-6 absolute right-10"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 14 10"
+          >
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M1 5h12m0 0L9 1m4 4L9 9"
+            />
+          </svg>
+      </a>
     </div>
   </div>
 </template>
@@ -135,9 +138,10 @@ export default {
         {
           id: 1,
           name: "Ricky Juliansyah",
-          icon: `<svg class="w-full h-full text-gray-800 dark:text-white" 
+          link: "https://www.linkedin.com/in/rickyjuliansyah/",
+          icon: `<svg class="w-full h-full text-gray-800 dark:text-white hover:text-white" 
                       aria-hidden="true" xmlns="http://www.w3.org/2000/svg" 
-                      width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                      width="24" height="24" fill="#1798E2" viewBox="0 0 24 24">
                   <path fill-rule="evenodd" d="M12.51 8.796v1.697a3.738 3.738 0 0 1 3.288-1.684c3.455 0 4.202 2.16 4.202 4.97V19.5h-3.2v-5.072c0-1.21-.244-2.766-2.128-2.766-1.827 0-2.139 1.317-2.139 2.676V19.5h-3.19V8.796h3.168ZM7.2 6.106a1.61 1.61 0 0 1-.988 1.483 1.595 1.595 0 0 1-1.743-.348A1.607 1.607 0 0 1 5.6 4.5a1.601 1.601 0 0 1 1.6 1.606Z" clip-rule="evenodd"/>
                   <path d="M7.2 8.809H4V19.5h3.2V8.809Z"/>
                 </svg>`,
@@ -145,15 +149,21 @@ export default {
         {
           id: 2,
           name: "rickyjuliansyah7@gmail.com",
-          icon: `<svg class="w-full h-full text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+          link: "mailto:rickyjuliansyah7@gmail.com?subject=Inquiry&body=Hello, I have a question",
+          icon: `<svg class="w-full h-full text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#1798E2" viewBox="0 0 24 24">
   <path d="M17 6h-2V5h1a1 1 0 1 0 0-2h-2a1 1 0 0 0-1 1v2h-.541A5.965 5.965 0 0 1 14 10v4a1 1 0 1 1-2 0v-4c0-2.206-1.794-4-4-4-.075 0-.148.012-.22.028C7.686 6.022 7.596 6 7.5 6A4.505 4.505 0 0 0 3 10.5V16a1 1 0 0 0 1 1h7v3a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-3h5a1 1 0 0 0 1-1v-6c0-2.206-1.794-4-4-4Zm-9 8.5H7a1 1 0 1 1 0-2h1a1 1 0 1 1 0 2Z"/>
 </svg>
 `,
         },
-        { id: 3, name: "@rickyjuliansyah",  icon: `<svg class="w-full h-full text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-  <path fill="currentColor" fill-rule="evenodd" d="M3 8a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V8Zm5-3a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3V8a3 3 0 0 0-3-3H8Zm7.597 2.214a1 1 0 0 1 1-1h.01a1 1 0 1 1 0 2h-.01a1 1 0 0 1-1-1ZM12 9a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm-5 3a5 5 0 1 1 10 0 5 5 0 0 1-10 0Z" clip-rule="evenodd"/>
+        {
+          id: 3,
+          name: "@rickyjuliansyah",
+          link: "http://instagram.com/rickyjuliansyah",
+          icon: `<svg class="w-full h-full text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#" viewBox="0 0 24 24">
+  <path fill="#1798E2" fill-rule="evenodd" d="M3 8a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V8Zm5-3a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3V8a3 3 0 0 0-3-3H8Zm7.597 2.214a1 1 0 0 1 1-1h.01a1 1 0 1 1 0 2h-.01a1 1 0 0 1-1-1ZM12 9a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm-5 3a5 5 0 1 1 10 0 5 5 0 0 1-10 0Z" clip-rule="evenodd"/>
 </svg>
-`},
+`,
+        },
       ],
     };
   },
