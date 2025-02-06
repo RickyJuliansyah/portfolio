@@ -1,6 +1,12 @@
 <script setup>
 import { useRoute, RouterLink, RouterView } from "vue-router";
 const route = useRoute();
+const links = [
+  { id: 1, name: "ABOUT ME", path: "/" },
+  { id: 2, name: "WORK EXPERIENCE", path: "/work-experience" },
+  { id: 3, name: "PORTFOLIO", path: "/portfolio" },
+  { id: 4, name: "CONTACT", path: "/contact" },
+];
 </script>
 
 <template>
@@ -40,33 +46,16 @@ const route = useRoute();
         >
           <div class="space-x-6 flex" id="link">
             <RouterLink
-              to="/"
+              v-for="link in links"
+              :key="link.id"
+              :to="link.path"
               class="px-3 py-2 text-md text-neutral-800 relative inline-block group hover:font-extra-bold"
-              >ABOUT ME
+              :class="route.path == link.path ? 'font-extra-bold' : ''"
+              >{{ link.name }}
               <span
                 id="line"
                 class="absolute bottom-0 left-0 w-0 h-1 bg-[#1798E2] transition-all group-hover:w-full group-active:w-full"
-              ></span
-            ></RouterLink>
-            <RouterLink
-              to="/work-experience"
-              class="px-3 py-2 text-md text-neutral-800 relative inline-block group hover:font-extra-bold"
-              >WORK EXPERIENCE<span
-                class="absolute bottom-0 left-0 w-0 h-1 bg-[#1798E2] transition-all group-hover:w-full"
-              ></span
-            ></RouterLink>
-            <RouterLink
-              to="/portfolio"
-              class="px-3 py-2 text-md text-neutral-800 relative inline-block group hover:font-extra-bold"
-              >PORTFOLIO<span
-                class="absolute bottom-0 left-0 w-0 h-1 bg-[#1798E2] transition-all group-hover:w-full"
-              ></span
-            ></RouterLink>
-            <RouterLink
-              to="/contact"
-              class="px-3 py-2 text-md text-neutral-800 relative inline-block group hover:font-extra-bold"
-              >CONTACT<span
-                class="absolute bottom-0 left-0 w-0 h-1 bg-[#1798E2] transition-all group-hover:w-full"
+                :class="route.path == link.path ? 'w-full' : ''"
               ></span
             ></RouterLink>
           </div>
@@ -82,33 +71,16 @@ const route = useRoute();
     >
       <div class="space-x-6 text-center" id="link">
         <RouterLink
-          to="/"
+          v-for="link in links"
+          :key="link.id"
+          :to="link.path"
           class="px-3 py-2 text-md text-neutral-800 relative inline-block group hover:font-extra-bold"
-          >ABOUT ME
+          :class="route.path == link.path ? 'font-extra-bold' : ''"
+          >{{ link.name }}
           <span
             id="line"
             class="absolute bottom-0 left-0 w-0 h-1 bg-[#1798E2] transition-all group-hover:w-full group-active:w-full"
-          ></span
-        ></RouterLink>
-        <RouterLink
-          to="/work-experience"
-          class="px-3 py-2 text-md text-neutral-800 relative inline-block group hover:font-extra-bold"
-          >WORK EXPERIENCE<span
-            class="absolute bottom-0 left-0 w-0 h-1 bg-[#1798E2] transition-all group-hover:w-full"
-          ></span
-        ></RouterLink>
-        <RouterLink
-          to="/portfolio"
-          class="px-3 py-2 text-md text-neutral-800 relative inline-block group hover:font-extra-bold"
-          >PORTFOLIO<span
-            class="absolute bottom-0 left-0 w-0 h-1 bg-[#1798E2] transition-all group-hover:w-full"
-          ></span
-        ></RouterLink>
-        <RouterLink
-          to="/contact"
-          class="px-3 py-2 text-md text-neutral-800 relative inline-block group hover:font-extra-bold"
-          >CONTACT<span
-            class="absolute bottom-0 left-0 w-0 h-1 bg-[#1798E2] transition-all group-hover:w-full"
+            :class="route.path == link.path ? 'w-full' : ''"
           ></span
         ></RouterLink>
       </div>
