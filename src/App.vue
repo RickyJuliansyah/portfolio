@@ -1,90 +1,32 @@
 <script setup>
-import { useRoute, RouterLink, RouterView } from "vue-router";
-const route = useRoute();
-const links = [
-  { id: 1, name: "ABOUT ME", path: "/" },
-  { id: 2, name: "WORK EXPERIENCE", path: "/work-experience" },
-  { id: 3, name: "PORTFOLIO", path: "/portfolio" },
-  { id: 4, name: "CONTACT", path: "/contact" },
-];
+import { RouterView } from "vue-router";
+</script>
+
+<script>
+import NavBar from "./components/NavBar.vue";
+
+export default {
+  components: {
+    NavBar,
+  },
+};
 </script>
 
 <template>
-  <template v-if="route.path === '/' || route.path === '/contact'">
-    <div
-      id="about"
-      class="grid xl:grid-cols-12 md:grid-cols-12 sm:grid-cols-12 w-full h-screen"
-    >
-      <!-- Left Side -->
-      <div class="xl:col-span-4 md:col-span-4 sm:col-span-12 relative">
-        <div
-          :class="
-            route.path === '/'
-              ? `bg-[url('https://rickyjuliansyah.github.io/portfolio/src/assets/images/profile.jpg')]`
-              : `bg-[url('https://rickyjuliansyah.github.io/portfolio/src/assets/images/contact.png')] bg-top`
-          "
-          class="bg-cover bg-center xs:bg-top w-full h-full absolute"
-        >
-          <div
-            class="xl:hidden absolute inset-0 bg-gradient-to-t from-blue-500 to-transparent opacity-80"
-          ></div>
-          <h3
-            class="xl:hidden md:hidden absolute bottom-0 left-0 text-3xl text-white p-4"
-          >
-            Hi ! <br />
-            I’m Ricky Juliansyah. <br />
-            A Full Stack Web Developer
-          </h3>
-        </div>
-        <div class="h-64 sm:h-110 md:h-full xs:h-100 lg:h-full opacity-0"></div>
-      </div>
+  <NavBar></NavBar>
 
-      <!-- Right Side -->
-      <div class="xl:col-span-8 md:col-span-8 sm:col-span-12 m-4">
-        <nav
-          class="absolute bottom-0 xs:hidden xl:inline-block md:inline-block"
-        >
-          <div class="space-x-6 flex" id="link">
-            <RouterLink
-              v-for="link in links"
-              :key="link.id"
-              :to="link.path"
-              class="px-3 py-2 text-md text-neutral-800 relative inline-block group hover:font-extra-bold"
-              :class="route.path == link.path ? 'font-extra-bold' : ''"
-              >{{ link.name }}
-              <span
-                id="line"
-                class="absolute bottom-0 left-0 w-0 h-1 bg-[#1798E2] transition-all group-hover:w-full group-active:w-full"
-                :class="route.path == link.path ? 'w-full' : ''"
-              ></span
-            ></RouterLink>
-          </div>
-        </nav>
-        <RouterView />
-      </div>
-    </div>
-  </template>
-
-  <div v-else class="w-full">
-    <nav
-      class="absolute inset-x-0 bottom-0 xs:hidden xl:inline-block md:hidden"
-    >
-      <div class="space-x-6 text-center" id="link">
-        <RouterLink
-          v-for="link in links"
-          :key="link.id"
-          :to="link.path"
-          class="px-3 py-2 text-md text-neutral-800 relative inline-block group hover:font-extra-bold"
-          :class="route.path == link.path ? 'font-extra-bold' : ''"
-          >{{ link.name }}
-          <span
-            id="line"
-            class="absolute bottom-0 left-0 w-0 h-1 bg-[#1798E2] transition-all group-hover:w-full group-active:w-full"
-            :class="route.path == link.path ? 'w-full' : ''"
-          ></span
-        ></RouterLink>
-      </div>
-    </nav>
+  <transition name="fade" mode="out-in">
     <RouterView />
-  </div>
+  </transition>
 </template>
+<style>
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+</style>

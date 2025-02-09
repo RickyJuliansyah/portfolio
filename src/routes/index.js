@@ -1,27 +1,34 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHashHistory } from 'vue-router'
+import { IStaticMethods } from "preline/preline";
 
 const router = createRouter({
-    history: createWebHistory(import.meta.env.BASE_URL),
+    history: createWebHashHistory(),
     routes: [
         {
             path: '/',
             name: 'AboutMe',
-            component: () => import('../page/AboutMe.vue')
+            component: () => import('@/pages/AboutMe.vue').catch(err => console.error("Import error:", err))
+
         },
         {
             path: '/work-experience',
             name: 'work-experience',
-            component: () => import('../page/WorkExperience.vue')
+            component: () => import('@/pages/WorkExperience.vue')
         },
         {
             path: '/portfolio',
             name: 'portfolio',
-            component: () => import('../page/Portfolio.vue')
+            component: () => import('@/pages/Portfolio.vue')
         },
         {
             path: '/contact',
             name: 'contact',
-            component: () => import('../page/Contact.vue')
+            component: () => import('@/pages/Contact.vue')
+        },
+        {
+            path: '/detail-project/:id',
+            name: 'detail-project',
+            component: () => import('@/pages/DetailProject.vue')
         }
     ]
 })

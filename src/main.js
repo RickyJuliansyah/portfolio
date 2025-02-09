@@ -1,8 +1,10 @@
 import { createApp } from 'vue'
 import './style.css'
-// import './script.js'
 import App from './App.vue'
 import router from './routes/index'
+import "preline";
+
+globalThis.HSStaticMethods = globalThis.HSStaticMethods || {};
 
 const app = createApp(App)
 app.use(router)
