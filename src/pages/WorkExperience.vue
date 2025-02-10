@@ -38,13 +38,13 @@
             <!-- Skeleton untuk Text -->
             <div class="flex flex-col justify-center">
               <div
-                class="h-4 bg-gray-200 rounded-full dark:bg-gray-700 w-60 mb-4"
+                class="h-4 bg-gray-200 rounded-full w-60 mb-4"
               ></div>
               <div
-                class="h-3.5 w-full bg-gray-200 rounded-full dark:bg-gray-700 max-w-[480px] mb-2.5"
+                class="h-3.5 w-full bg-gray-200 rounded-full max-w-[480px] mb-2.5"
               ></div>
               <div
-                class="h-3.5 w-42 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[480px] mb-2.5"
+                class="h-3.5 w-42 bg-gray-200 rounded-full max-w-[480px] mb-2.5"
               ></div>
             </div>
           </div>
@@ -53,7 +53,7 @@
               <div
                 v-for="i in 4"
                 :key="i"
-                class="h-6 w-20 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[480px] mb-3"
+                class="h-6 w-20 bg-gray-200 rounded-full max-w-[480px] mb-3"
               ></div>
             </div>
           </div>

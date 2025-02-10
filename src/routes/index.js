@@ -1,5 +1,4 @@
-import { createRouter, createWebHashHistory } from 'vue-router'
-import { IStaticMethods } from "preline/preline";
+import { createRouter, createWebHashHistory } from 'vue-router';
 
 const router = createRouter({
     history: createWebHashHistory(),
@@ -30,7 +29,10 @@ const router = createRouter({
             name: 'detail-project',
             component: () => import('@/pages/DetailProject.vue')
         }
-    ]
+    ],
+    scrollBehavior(to, from, savedPosition) {
+        return { x: 0, y: 0 }; // Selalu scroll ke atas
+      },
 })
 
 export default router

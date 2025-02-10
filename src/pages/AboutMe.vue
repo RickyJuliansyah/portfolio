@@ -24,7 +24,8 @@
         </div>
         <div v-else>
           <div
-            class="bg-[url('https://raw.githubusercontent.com/RickyJuliansyah/portfolio/refs/heads/main/src/assets/images/profile.jpg')] bg-cover bg-center xs:bg-top w-full h-full absolute"
+            class="bg-cover bg-center xs:bg-top w-full h-full absolute"
+            :style="`background-image: url('/portfolio/images/profile.jpg')`"
           >
             <div
               class="xl:hidden absolute inset-0 bg-gradient-to-t from-blue-500 to-transparent opacity-80"

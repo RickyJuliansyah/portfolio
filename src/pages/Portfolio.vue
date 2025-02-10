@@ -36,25 +36,25 @@
 
           <!-- Skeleton untuk Text -->
           <div
-            class="h-4 bg-gray-200 rounded-full dark:bg-gray-700 w-60 my-2"
+            class="h-4 bg-gray-200 rounded-full  w-60 my-2"
           ></div>
           <div class="flex xs:block xs:col-span-12 gap-1 items-center mt-3">
             <div class="flex gap-1">
               <div
                 v-for="i in 4"
                 :key="i"
-                class="h-6 w-20 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[480px] mb-3"
+                class="h-6 w-20 bg-gray-200 rounded-full max-w-[480px] mb-3"
               ></div>
             </div>
           </div>
 
           <div
-            class="h-10 w-full py-2 mt-auto bg-gray-200 rounded-md dark:bg-gray-700 my-2"
+            class="h-10 w-full py-2 mt-auto bg-gray-200 rounded-md my-2"
           ></div>
         </div>
 
         <div v-else class="flex flex-col flex-grow">
-          <div class="bg-neutral rounded-md h-60">
+          <div class="bg-neutral rounded-md h-60 flex justify-center items-center">
             <img
               :src="`/portfolio/images/project/${data.pathImage}.webp`"
               :alt="`${data.pathImage} image`"
@@ -120,7 +120,7 @@ export default {
           nameApplication: "MAJ Integrated System Dashboard (MISD)",
           pathImage: "MISD",
           about:
-            "MAJ Integrated System Dashboard (MISD) adalah aplikasi berbasis web yang dirancang untuk mengintegrasikan dan menampilkan data operasional dari berbagai departemen di PT Mekar Armada Jaya dalam satu platform terpusat. Dengan fitur seperti integrasi data real-time dari SAP dan sistem internal lainnya, dashboard interaktif, automasi laporan, serta sistem notifikasi, MISD membantu meningkatkan efisiensi operasional, akurasi data, dan transparansi dalam pengelolaan informasi perusahaan. Menggunakan teknologi Vue.js di frontend dan PHP (CodeIgniter) di backend, aplikasi ini menawarkan antarmuka yang responsif dan user-friendly untuk mendukung pengambilan keputusan yang lebih cepat dan tepat di berbagai divisi, termasuk Stamping, Welding, PPIC, Logistik, dan Marketing.",
+            "MAJ Integrated System Dashboard (MISD) is a web-based application designed to integrate and display operational data from various departments at PT Mekar Armada Jaya in one centralized platform. With features such as real-time data integration from SAP and other internal systems, interactive dashboards, report automation, and notification systems, MISD helps improve operational efficiency, data accuracy, and transparency in company information management. Using Vue.js technology in the frontend and PHP (CodeIgniter) in the backend, this application offers a responsive and user-friendly interface to support faster and more accurate decision-making across various divisions, including Stamping, Welding, PPIC, Logistics, and Marketing.",
           technology: [
             { name: "Vue JS", pathImage: "vuejs" },
             { name: "Codeigniter 3", pathImage: "ci" },
@@ -161,9 +161,9 @@ export default {
         {
           id: 2,
           nameApplication: "MAJ Central Hub",
-          pathImage: "MISD",
+          pathImage: "CENTRAL",
           about:
-            "MAJ Central HUB adalah aplikasi berbasis web yang berfungsi sebagai portal utama untuk mengakses seluruh aplikasi internal di PT Mekar Armada Jaya. Aplikasi ini menyajikan daftar lengkap sistem yang digunakan di berbagai departemen, memungkinkan pengguna untuk dengan mudah menemukan dan mengakses aplikasi yang dibutuhkan hanya dengan sekali klik. Dengan tampilan yang intuitif dan navigasi yang efisien, MAJ Central HUB meningkatkan keterpaduan sistem, mengurangi waktu pencarian aplikasi, serta memastikan setiap pengguna dapat dengan cepat terhubung ke platform yang relevan sesuai dengan peran dan kebutuhannya.",
+            "MAJ Central HUB is a web-based application that serves as the main portal for accessing all internal applications at PT Mekar Armada Jaya. This application presents a complete list of systems used across various departments, allowing users to easily find and access needed applications with just one click. With an intuitive interface and efficient navigation, MAJ Central HUB enhances system integration, reduces application search time, and ensures each user can quickly connect to relevant platforms according to their roles and needs.",
           technology: [
             { name: "Vue JS", pathImage: "vuejs" },
             { name: "Codeigniter 3", pathImage: "ci" },
@@ -180,14 +180,19 @@ export default {
             { name: "PPC", pathImage: "ppc" },
             { name: "Purchasing", pathImage: "pud" },
           ],
-          appMenu: [{ name: "Login", pathImage: "MISD/login" }],
+          appMenu: [
+            { name: "Home Page", pathImage: "CENTRAL/homepage" },
+            { name: "Andon (Report) List", pathImage: "CENTRAL/andon" },
+            { name: "Application List", pathImage: "CENTRAL/app" },
+            { name: "Management Data", pathImage: "CENTRAL/management" },
+          ],
         },
         {
           id: 3,
           nameApplication: "Rundown Stock MAJ",
           about:
-            "Rundown Stock MAJ adalah aplikasi berbasis web yang digunakan untuk memantau stok Inventory Finish Part, Inventory Raw Material, dan Work in Progress dalam bentuk grafik yang informatif dan interaktif. Aplikasi ini mengambil data langsung dari SAP dan file Excel, kemudian mengelompokkannya berdasarkan model mobil dan pelanggan untuk memberikan gambaran yang lebih jelas mengenai ketersediaan stok di setiap tahap produksi. Dengan visualisasi data yang real-time, Rundown Stock MAJ membantu tim terkait dalam menganalisis tren stok, mengoptimalkan perencanaan produksi, serta memastikan kelancaran rantai pasok di PT Mekar Armada Jaya.",
-          pathImage: "MISD",
+            "MAJ Stock Rundown is a web-based application used to monitor Finish Part Inventory, Raw Material Inventory, and Work in Progress through informative and interactive graphics. This application pulls data directly from SAP and Excel files, then groups it by car model and customer to provide a clearer picture of stock availability at each production stage. With real-time data visualization, MAJ Stock Rundown helps relevant teams analyze stock trends, optimize production planning, and ensure smooth supply chain operations at PT Mekar Armada Jaya.",
+          pathImage: "STOCK",
           technology: [
             { name: "Codeigniter 3", pathImage: "ci" },
             { name: "MySQL", pathImage: "mysql" },
@@ -203,14 +208,21 @@ export default {
             { name: "PPC", pathImage: "ppc" },
             { name: "Purchasing", pathImage: "pud" },
           ],
-          appMenu: [{ name: "Login", pathImage: "MISD/login" }],
+          appMenu: [
+            { name: "Field Management", pathImage: "STOCK/field" },
+            { name: "Display Management", pathImage: "STOCK/display" },
+            { name: "Rundown Stock Inventory Finish Part", pathImage: "STOCK/ifp" },
+            { name: "Rundown Stock Inventory Raw Material", pathImage: "STOCK/irm" },
+            { name: "Rundown Stock Work In Progress", pathImage: "STOCK/wip" },
+
+          ],
         },
         {
           id: 4,
           nameApplication: "UI/UX Design Sumsel Tourism",
           pathImage: "SUMSEL",
           about:
-            "UI/UX Sumsel Tourism merupakan sebuah proyek pembelajaran yang saya kerjakan melalui platform BuildWithAngga.com, di mana saya mendalami prinsip-prinsip desain antarmuka (UI) dan pengalaman pengguna (UX) dalam konteks pengembangan website pariwisata. Dalam proyek ini, saya merancang sebuah platform digital yang memperkenalkan keindahan wisata Sumatera Selatan dengan pendekatan user-centered design, mulai dari pembuatan wireframe, prototype interaktif, hingga desain visual yang menarik. Website ini dirancang untuk memudahkan wisatawan dalam menemukan destinasi wisata menarik di Sumsel, lengkap dengan informasi tentang kuliner lokal, akomodasi, dan tips perjalanan. ",
+            "Sumsel Tourism UI/UX is a learning project I worked on through the BuildWithAngga.com platform, where I delved into user interface (UI) and user experience (UX) design principles in the context of tourism website development. In this project, I designed a digital platform that showcases the beauty of South Sumatra tourism using a user-centered design approach, from creating wireframes and interactive prototypes to developing attractive visual designs. This website is designed to help tourists easily discover interesting tourist destinations in South Sumatra, complete with information about local cuisine, accommodation, and travel tips.",
           technology: [{ name: "Figma", pathImage: "figma" }],
           department: [],
           appMenu: [
@@ -224,7 +236,7 @@ export default {
           nameApplication: "Company Profile PT Sriwijaya Agro Industri",
           pathImage: "PT-SAI",
           about:
-            "Company profile PT Sriwijaya Agro Industri merupakan sebuah platform digital yang dirancang untuk memperkenalkan dan mempromosikan perusahaan ke masyarakat luas, khususnya dalam bidang agro industri. Nah, di halaman utama (home), pengunjung bisa melihat berbagai informasi penting tentang perusahaan, mulai dari sejarah berdirinya PT Sriwijaya Agro Industri, visi misi perusahaan, sampai portfolio produk-produk unggulan yang dihasilkan. Yang menarik nih, aplikasi ini juga dilengkapi dengan fitur manajemen berita yang dikelola khusus sama admin, jadi semua update terbaru tentang perusahaan, kegiatan, atau perkembangan di industri pertanian bisa langsung dishare ke publik dan selalu up-to-date. Dengan adanya sistem pengelolaan konten yang terstruktur ini, informasi yang ditampilkan di website selalu fresh dan relevan buat para pengunjung yang ingin tahu lebih banyak tentang PT Sriwijaya Agro Industri.",
+            "PT Sriwijaya Agro Industri's company profile is a digital platform designed to introduce and promote the company to the general public, particularly in the agro-industry sector. On the home page, visitors can access various important information about the company, from the history of PT Sriwijaya Agro Industri's establishment, company vision and mission, to a portfolio of their flagship products. Interestingly, this application is equipped with a news management feature specifically managed by administrators, allowing all the latest updates about the company, activities, or developments in the agricultural industry to be directly shared with the public and kept up-to-date. With this structured content management system, the information displayed on the website remains fresh and relevant for visitors who want to learn more about PT Sriwijaya Agro Industri.",
           technology: [
             { name: "Codeigniter 4", pathImage: "ci" },
             { name: "MySQL", pathImage: "mysql" },
@@ -243,7 +255,7 @@ export default {
           nameApplication: "ARSIMO PT SAI",
           pathImage: "E-ARSIP",
           about:
-            "Aplikasi E-Arsip PT Sriwijaya Agro Industri adalah sistem pengelolaan dokumen digital yang dirancang khusus untuk mengorganisir, menyimpan, dan mengelola berbagai arsip perusahaan secara efisien dan aman. Dengan fitur manajemen dokumen yang komprehensif, aplikasi ini memungkinkan karyawan untuk dengan mudah mengunggah, mengkategorikan, dan mencari dokumen penting perusahaan seperti surat-menyurat, kontrak, laporan keuangan, dan dokumen legal lainnya.",
+            "PT Sriwijaya Agro Industri's E-Archive Application is a digital document management system specifically designed to efficiently and securely organize, store, and manage various company archives. With comprehensive document management features, this application enables employees to easily upload, categorize, and search for important company documents such as correspondence, contracts, financial reports, and other legal documents.",
           technology: [
             { name: "Codeigniter 4", pathImage: "ci" },
             { name: "MySQL", pathImage: "mysql" },
@@ -267,7 +279,7 @@ export default {
             "Monev Tagihan Keuangan BPJS Kesehatan Kantor Cabang Utama Palembang",
           pathImage: "MONEV",
           about:
-            "Aplikasi Monev (Monitoring dan Evaluasi) Tagihan Keuangan BPJS Kesehatan Kantor Cabang Utama Palembang merupakan sebuah proyek laporan akhir yang saya kembangkan selama menempuh pendidikan Diploma III. Sistem ini dirancang khusus untuk mengoptimalkan proses pemantauan dan evaluasi penagihan keuangan di BPJS Kesehatan KCU Palembang dengan menghadirkan fitur-fitur seperti tracking status pembayaran, manajemen data tagihan, pelaporan real-time, serta visualisasi data keuangan dalam bentuk dashboard yang informatif. Aplikasi ini membantu petugas BPJS Kesehatan dalam memantau alur penagihan, mengidentifikasi keterlambatan pembayaran, dan menghasilkan laporan analisis yang memudahkan pengambilan keputusan.",
+            "The BPJS Healthcare Financial Billing Monitoring and Evaluation (Monev) Application for the Palembang Main Branch Office is a final project I developed during my Diploma III education. This system is specifically designed to optimize the financial billing monitoring and evaluation process at BPJS Healthcare Palembang Main Branch Office by featuring payment status tracking, billing data management, real-time reporting, and financial data visualization through an informative dashboard. This application assists BPJS Healthcare officers in monitoring billing flows, identifying late payments, and generating analytical reports that facilitate decision-making.",
           technology: [
             { name: "PHP", pathImage: "php" },
             { name: "Javascript", pathImage: "js" },
