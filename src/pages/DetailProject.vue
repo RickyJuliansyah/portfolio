@@ -110,9 +110,10 @@
                 class="bg-neutral rounded-md h-24 flex items-center justify-center ease-in-out hover:-translate-y-1 hover:scale-110 transition"
               >
                 <img
-                  :src="`/portfolio/images/${data.pathImage}-logo.png`"
+                  :src="`/portfolio/images/technology/${data.pathImage}-logo.webp`"
                   :alt="`${data.pathImage} logo`"
                   class="p-2 h-full w-auto object-contain"
+                  @load="loading = false"
                 />
               </div>
               <h3 class="xl:text-lg md:text-sm">{{ data.name }}</h3>
@@ -156,6 +157,7 @@
                 :src="`/portfolio/images/department/${data.pathImage}-logo.webp`"
                 :alt="`${data.pathImage} logo`"
                 class="w-full h-auto"
+                @load="loading = false"
               />
             </div>
           </div>
@@ -196,6 +198,7 @@
               :src="`/portfolio/images/${data.pathImage}.webp`"
               :alt="`${data.pathImage} image`"
               class="h-full w-auto object-contain rounded-md outline-1 outline-primary"
+              @load="loading = false"
             />
 
             <svg

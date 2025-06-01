@@ -24,9 +24,9 @@
         </div>
         <div v-else>
           <div
-            class=" bg-cover bg-center xs:bg-top w-full h-full absolute"
-          :style="`background-image: url('/portfolio/images/contact.png')`"
-            ></div>
+            class="bg-cover bg-center xs:bg-top w-full h-full absolute"
+            :style="`background-image: url('/portfolio/images/contact.webp')`"
+          ></div>
           <div
             class="xl:hidden absolute inset-0 bg-gradient-to-t from-blue-500 to-transparent opacity-80"
           ></div>
@@ -70,7 +70,7 @@
                     ></div>
                     <div class="flex flex-col justify-center">
                       <div
-                        class="h-10 bg-gray-300 rounded-full  w-62"
+                        class="h-10 bg-gray-300 rounded-full xs:w-20 md:w-62"
                       ></div>
                     </div>
                   </div>

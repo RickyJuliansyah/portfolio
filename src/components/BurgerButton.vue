@@ -47,7 +47,7 @@
   <!-- Mobile Menu -->
   <div
     id="mobile-menu"
-    class="rounded-xl hidden w-sm absolute top-16 z-10 right-4 bg-primary/80"
+    class="rounded-xl hidden w-xs absolute top-16 z-10 right-4 bg-primary/80"
   >
     <div class="space-y-1 p-2">
       <RouterLink

@@ -38,7 +38,7 @@
             <!-- Skeleton untuk Text -->
             <div class="flex flex-col justify-center">
               <div
-                class="h-4 bg-gray-200 rounded-full w-60 mb-4"
+                class="h-4 bg-gray-200 rounded-full md:w-60 xs:w-30 mb-4"
               ></div>
               <div
                 class="h-3.5 w-full bg-gray-200 rounded-full max-w-[480px] mb-2.5"
@@ -67,6 +67,7 @@
                 :src="`/portfolio/images/experience/${data.pathImage}-logo.webp`"
                 :alt="`${data.pathImage} logo`"
                 class="p-2 h-full w-28 object-contain"
+                @load="loading = false"
               />
             </div>
 
@@ -109,9 +110,21 @@ export default {
       experience: [
         {
           id: 1,
+          position: "Programmer",
+          pathImage: "ast",
+          duration: "Mei 2025 - Now",
+          company: "PT Agung Solusi Trans (Agungrent)",
+          technology: [
+            { name: "Codeigniter 3" },
+            { name: "MySQL" },
+            { name: "Bootstrap" },
+          ],
+        },
+        {
+          id: 2,
           position: "Software Developer",
           pathImage: "maj",
-          duration: "April 2022 - Now",
+          duration: "April 2022 - April 2025",
           company: "PT Mekar Armada Jaya",
           technology: [
             { name: "Vue JS" },
@@ -119,11 +132,11 @@ export default {
             { name: "MySQL" },
             { name: "Vuetify" },
             { name: "Socket.IO" },
-            { name: "bitbucket" },
+            { name: "Bitbucket" },
           ],
         },
         {
-          id: 2,
+          id: 3,
           position: "IT Staff",
           pathImage: "sai",
           duration: "January 2021 - April 2022",
@@ -136,7 +149,7 @@ export default {
           ],
         },
         {
-          id: 3,
+          id: 4,
           position: "Head of Department Student Association",
           pathImage: "hmj",
           duration: "February 2019 - February 2020",
@@ -149,7 +162,7 @@ export default {
           ],
         },
         {
-          id: 4,
+          id: 5,
           position: "Second Vice President",
           pathImage: "lks",
           duration: "May 2019 - May 2022",
@@ -163,7 +176,7 @@ export default {
           ],
         },
         {
-          id: 5,
+          id: 6,
           position: "Head of Flag Ceremony Team",
           pathImage: "paskibra",
           duration: "March 2015 - March 2016",

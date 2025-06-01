@@ -1,4 +1,5 @@
 import { createRouter, createWebHashHistory } from 'vue-router';
+import { nextTick } from 'vue';
 
 const router = createRouter({
     history: createWebHashHistory(),
@@ -31,8 +32,8 @@ const router = createRouter({
         }
     ],
     scrollBehavior(to, from, savedPosition) {
-        return { x: 0, y: 0 }; // Selalu scroll ke atas
-      },
+        return nextTick().then(() => ({ left: 0, top: 0 }));
+    }
 })
 
 export default router

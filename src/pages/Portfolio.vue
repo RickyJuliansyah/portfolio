@@ -35,9 +35,7 @@
           </div>
 
           <!-- Skeleton untuk Text -->
-          <div
-            class="h-4 bg-gray-200 rounded-full  w-60 my-2"
-          ></div>
+          <div class="h-4 bg-gray-200 rounded-full w-60 my-2"></div>
           <div class="flex xs:block xs:col-span-12 gap-1 items-center mt-3">
             <div class="flex gap-1">
               <div
@@ -54,11 +52,14 @@
         </div>
 
         <div v-else class="flex flex-col flex-grow">
-          <div class="bg-neutral rounded-md h-60 flex justify-center items-center">
+          <div
+            class="bg-neutral rounded-md h-60 flex justify-center items-center"
+          >
             <img
               :src="`/portfolio/images/project/${data.pathImage}.webp`"
               :alt="`${data.pathImage} image`"
               class="h-full w-auto object-contain rounded-md outline-1 outline-primary"
+              @load="loading = false"
             />
           </div>
           <h4 class="font-semi-bold my-2">{{ data.nameApplication }}</h4>
@@ -211,10 +212,15 @@ export default {
           appMenu: [
             { name: "Field Management", pathImage: "STOCK/field" },
             { name: "Display Management", pathImage: "STOCK/display" },
-            { name: "Rundown Stock Inventory Finish Part", pathImage: "STOCK/ifp" },
-            { name: "Rundown Stock Inventory Raw Material", pathImage: "STOCK/irm" },
+            {
+              name: "Rundown Stock Inventory Finish Part",
+              pathImage: "STOCK/ifp",
+            },
+            {
+              name: "Rundown Stock Inventory Raw Material",
+              pathImage: "STOCK/irm",
+            },
             { name: "Rundown Stock Work In Progress", pathImage: "STOCK/wip" },
-
           ],
         },
         {
@@ -312,7 +318,11 @@ export default {
       const selectedProject = this.portfolio.find((p) => p.id === id);
       if (selectedProject) {
         eventBus.project = selectedProject; // Update eventBus
-        this.$router.push(`/detail-project/${id}`); // Navigasi
+        this.$router.push(`/detail-project/${id}`).then(() => {
+          this.$nextTick(() => {
+            window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+          });
+        });
       }
     },
   },

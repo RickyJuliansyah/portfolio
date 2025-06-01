@@ -25,7 +25,7 @@
         <div v-else>
           <div
             class="bg-cover bg-center xs:bg-top w-full h-full absolute"
-            :style="`background-image: url('/portfolio/images/profile.jpg')`"
+            :style="`background-image: url('/portfolio/images/profile.webp')`"
           >
             <div
               class="xl:hidden absolute inset-0 bg-gradient-to-t from-blue-500 to-transparent opacity-80"
@@ -151,14 +151,14 @@
 
       <!-- CTA -->
       <div class="flex gap-x-6 xs:mt-4">
-        <BaseButton
-          href="https://drive.google.com/file/d/1cDMNQEJWnZ4qxpysOaVgRR4c78Kgdrml/view?usp=drive_link"
+        <a
+          class="xs:py-4 xs:px-8 md:py-4 xl:px-16 rounded-md cursor-pointer bg-primary text-center text-md font-semibold text-white shadow-xs hover:text-neutral-900 hover:bg-secondary hover:outline-1 hover:outline-primary"
+          href="https://drive.google.com/file/d/1cxziuyWZE-NLkruYE83IULpIWREyyqzZ/view?usp=sharing"
           target="_blank"
           variant="primary"
-          class="xs:py-4 xs:px-8 md:py-4 xl:px-16"
         >
           Get Resume
-        </BaseButton>
+        </a>
       </div>
 
       <!-- Sub Title -->
@@ -200,9 +200,10 @@
                 class="bg-neutral rounded-md h-24 flex items-center justify-center ease-in-out hover:-translate-y-1 hover:scale-110 transition"
               >
                 <img
-                  :src="`/portfolio/images/${data.pathImage}-logo.png`"
+                  :src="`/portfolio/images/technology/${data.pathImage}-logo.webp`"
                   :alt="`${data.pathImage} logo`"
                   class="p-2 h-full w-auto object-contain"
+                  @load="loading = false"
                 />
               </div>
               <h3 class="xl:text-lg md:text-sm">{{ data.nameSkills }}</h3>
